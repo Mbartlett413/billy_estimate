@@ -1,0 +1,484 @@
+<%= form_with(model: estimate, local: true) do |form| %>
+
+<div class = "container-fluid"> 
+
+<div class="row col-12">
+  <div class="col-sm-12 col-md-5 col-lg-5">  <!-- LEFT -->
+    <!-- Customer Basic Info -->
+    <div class="row">
+      <h1 class="col-12" >Main Info</h1><br>
+      <div class="col-lg-5 col-md-5 col-sm-12">
+
+          <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= form.label :origin_address %>
+          <%= form.text_field :origin_address, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= form.label :dest_addres %>
+          <%= form.text_field :dest_addres, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= form.label :home_phone %>
+          <%= form.text_field :home_phone, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= form.label :bus_phone %>
+          <%= form.text_field :bus_phone, class: 'form-control' %>
+          </div>
+      </div>
+
+      <div class="col-lg-5 col-md-5 col-sm-12">
+          <div class="form-group">
+          <%= form.label :account %>
+          <%= form.text_field :account, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= form.label :pack_date %>
+          <%= form.text_field :pack_date, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= form.label :load_date %>
+          <%= form.text_field :load_date, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= form.label :delivery_date %>
+          <%= form.text_field :delivery_date, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= form.label :special_instructions %>
+          <%= form.text_field :special_instructions, class: 'form-control' %>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-6 col-lg-6">  <!-- RIGHT -->
+    <!-- Customer WIll Move Table -->
+    <div class="row table-responsive-md">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+              <th scope="col-8"> </th>
+
+              <th scope="col-2" class="text-right">Service Facilities</th>
+          </tr>
+          <tr>
+            <th scope="col"> Customer Will Move</th>
+            <th scope="col"> Origin</th>
+            <th scope="col"> Destination</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr scope="row">
+            <td>
+              <ul>
+                <li>
+                  <%= form.check_box :small_lamps, class: 'form-check-input' %>
+                  <%= form.label :small_lamps, class: 'form-check-label' %>
+                </li>
+                <li>
+                  <%= form.check_box :dishes, class: 'form-check-input pull-right' %>
+                  <%= form.label :dishes, class: 'form-check-label pull-right'  %>    
+                </li>
+              </ul>
+            </td>
+            <td>
+              <%= form.check_box :origin_elevator, class: 'form-check-input' %> 
+              <%= form.label :origin_elevator, class: 'form-check-label'  %>
+            </td>
+            <td>
+              <%= form.check_box :destination_elevator, class: 'form-check-input'%>
+              <%= form.label :destination_elevator, class: 'form-check-label'  %>  
+            </td>
+          </tr>
+
+          <tr scope="row">
+            <td>
+              <ul>
+                <li>
+                  <%= form.check_box :clothes, class: 'form-check-input' %>
+                    <%= form.label :clothes, class: 'form-check-label' %>
+                </li>
+                <li>
+                  <%= form.check_box :all_breakables, class: 'form-check-input' %>
+                    <%= form.label :all_breakables, class: 'form-check-label' %>
+                </li>
+              </ul>
+            </td>
+
+            <td>
+              <%= form.check_box :origin_carry_flights, class: 'form-check-input' %>
+              <%= form.label :origin_carry_flights, class: 'form-check-label' %>
+            </td>
+            <td>
+              <%= form.check_box :destination_carry_flights, class: 'form-check-input' %>
+              <%= form.label :destination_carry_flights, class: 'form-check-label' %>
+            </td>
+          </tr scope="row">
+            <td>
+              <ul>
+                <li>
+                    <%= form.check_box :mirrors, class: 'form-check-input' %>
+                    <%= form.label :mirrors, class: 'form-check-label' %>
+                </li>
+                <li>
+                    <%= form.check_box :pictures, class: 'form-check-input' %>
+                    <%= form.label :pictures, class: 'form-check-label' %>              
+                </li>
+              </ul>
+            </td>
+            <td>
+              <%= form.check_box :origin_lower_hoist, class: 'form-check-input' %>
+              <%= form.label :origin_lower_hoist, class: 'form-check-label' %>
+            </td>
+            <td>
+              <%= form.check_box :destination_lower_hoist, class: 'form-check-input' %>
+              <%= form.label :destination_lower_hoist, class: 'form-check-label' %>
+            </td>
+          <tr>
+            
+          </tr>
+
+          <tr scope="row">
+            <td>
+              <ul>
+                <li> 
+                  <%= form.check_box :everything_but_furniture, class: 'form-check-input' %>
+                  <%= form.label :everything_but_furniture, class: 'form-check-label'%>
+                </li>
+              </ul>     
+            </td>
+            <td>
+              <%= form.check_box :origin_long_carry , class: 'form-check-input'%>
+              <%= form.label :origin_long_carry, class: 'form-check-label' %>
+              
+            </td>
+            <td>
+              <%= form.check_box :destination_long_carry, class: 'form-check-input' %>
+              <%= form.label :destination_long_carry, class: 'form-check-label' %>
+              
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>    
+  </div>
+</div>
+
+<div class="row col-12">
+  <!-- LEFT -->
+  <div class="col-sm-12 col-md-4 col-lg-4">
+    <!-- ABC Section Header -->
+    <div class="row">
+      <h1>Estimated Cost Of Services</h1><br>
+      <div class="form-group col-12">
+        <p>
+          Based On
+          <%= form.text_field :pounds, class: 'form-control-xs' %> Lbs 
+          <%= form.text_field :rooms, class: 'form-control-xs' %>Rooms 
+          <%= form.text_field :cubic_feet, class: 'form-control-xs' %>Cubic Feet 
+        </p>  
+      </div>
+    </div>
+    <!-- A-->
+    <div class="row">
+      <h4>A. Local Moving </h4>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p>
+          Van and <%= form.text_field :local_moving_movers, class: 'form-control-xs' %> movers at <%= form.text_field :local_moving_per_hour, class: 'form-control-xs' %> per hour 
+        </p>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p>
+          Estimated at <%= form.text_field :local_moving_estimated_hours, class: 'form-control-xs' %> hours
+        </p>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p> 
+          Driving Time <%= form.text_field :local_moving_driving_time, class: 'form-control-xs' %> hours
+        </p>
+      </div>
+
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p>
+          Insurance Charge $<%= form.text_field :local_moving_insurance_charge, class: 'form-control-xs' %> at $<%= form.text_field :local_moving_per_thousand, class: 'form-control-xs'%> per $1,000.00 declared value.
+        </p>    
+      </div>
+    </div>
+    <!-- B -->
+    <div class="row">
+      <h4>B. Storage </h4>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p> Van and <%= form.text_field :storage_movers, class: 'form-control-xs' %> movers at <%= form.text_field :storage_per_hour, class: 'form-control-xs' %> per hour</p>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p>Estimated at <%= form.text_field :storage_estimated_hours, class: 'form-control-xs' %> hours</p>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p>Warehouse handling in <%= form.text_field :storage_handling_per_crate, class: 'form-control-xs' %> per crate</p>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p>Monthly Storage Charge <%= form.text_field :storage_monthly_per_crate, class: 'form-control-xs' %> per crate</p>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <p>Insurance Charge $<%= form.text_field :storage_insurance_charge, class: 'form-control-xs' %> at $<%= form.text_field :storage_per_hundred_per_month, class: 'form-control-xs' %> per $100.00 declared value per month</p>
+      </div>
+    </div>
+    <!-- C -->
+    <div class="row">
+      <h4> C. Packing Services </h4>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="form-group">
+            <%= form.label :container_charges, class: 'form-control-label' %>
+            <%= form.text_field :container_charges, class: 'form-control-xs' %>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="form-group">
+            <%= form.label :packing_labor, class: 'form-control-label' %>
+            <%= form.text_field :packing_labor, class: 'form-control-xs' %>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="form-group">
+            <%= form.label :unpacking_labor, class: 'form-control-label' %>
+            <%= form.text_field :unpacking_labor, class: 'form-control-xs' %>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="form-group">
+            <%= form.label :other_service_desc, class: 'form-control-label' %>
+            <%= form.text_field :other_service_desc, class: 'form-control-xs' %>
+
+            <%= form.label :other_service_cost, class: 'form-control-label' %>
+            <%= form.text_field :other_service_cost, class: 'form-control-xs' %>
+          </div>
+        </div>
+    </div>
+    <!-- D -->
+    <div class="row">
+        <h4> C. Total </h4>
+
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="form-group">
+              <%= form.label :estimate_total, class: 'form-control-label' %>
+              <%= form.text_field :estimate_total, class: 'form-control-xs' %>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="form-group">
+              <%= form.label :down_payment, class: 'form-control-label' %>
+              <%= form.text_field :down_payment, class: 'form-control-xs' %>
+            </div>
+          </div>
+    </div>
+
+  </div><!-- End-->
+
+
+
+  <!-- Right -->
+  <div class="col-sm-12 col-md-4 col-lg-4">
+      <!-- Estimated Containers Table-->
+      <div class="row">
+        <table class="table table-striped">
+
+          <thead>
+            <tr>
+                <th scope="col-8"><h6>C. Estimated Containers (Packing/Unpacking)</h6> </th>
+                <th scope="col-4"></th>
+            </tr>
+
+            <tr>
+              <th scope="col-2"></th>
+              <th scope="col-3"> Containers</th>
+              <th></th>
+              <!-- <th></th> Comment Out Total -->
+              <th scope="col-3"> Packing</th>
+            </tr>
+
+            <tr>
+              <th scope="col-2">Description</th>
+              <th>Est Number</th>
+              <th>Per Unit</th>
+              <!-- <th>Total</th> -->
+              <th>Est Number</th>
+              <th>Per Unit</th>
+              <!-- <th> Total</th> -->
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><%= form.label :containers_est_num_barrel_dish_packs%></td>
+              <td><%= form.text_field :containers_est_num_barrel_dish_packs %></td>
+              <td><%= form.text_field :containers_per_unit_barrel_dish_packs %></td>
+              <!--<td></td>-->
+              <td><%= form.text_field :packing_est_num_barrel_dish_packs %></td>
+              <td><%= form.text_field :packing_per_unit_barrel_dish_packs%></td>
+              <!--<td></td>-->
+
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_carton_one_n_half %></td>
+              <td><%= form.text_field :containers_est_num_carton_one_n_half %></td>
+              <td><%= form.text_field :containers_per_unit_carton_one_n_half %></td>
+              <!-- <td></td> -->
+              <td><%= form.text_field :packing_est_num_carton_one_n_half %></td>
+              <td><%= form.text_field :packing_per_unit_carton_one_n_half %></td>
+              <!-- <td></td> -->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_carton_three %></td>
+              <td><%= form.text_field :containers_est_num_carton_three %></td>
+              <td><%= form.text_field :containers_per_unit_carton_three %></td>
+              <!-- <td></td> -->
+              <td><%= form.text_field :packing_est_num_carton_three %></td>
+              <td><%= form.text_field :packing_per_unit_carton_three %></td>
+              <!-- <td></td> -->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_carton_four_n_half %></td>
+              <td><%= form.text_field :containers_est_num_carton_four_n_half %></td>
+              <td><%= form.text_field :containers_per_unit_carton_four_n_half %></td>
+              <!-- <td></td> -->
+              <td><%= form.text_field :packing_est_num_carton_four_n_half %></td>
+              <td><%= form.text_field :packing_per_unit_carton_four_n_half %></td>
+              <!-- <td></td> -->
+            </tr>
+
+            <tr>
+              <td><%= form.label :containers_est_num_carton_six %></td>
+              <td><%= form.text_field :containers_est_num_carton_six %></td>
+              <td><%= form.text_field :containers_per_unit_carton_six %></td>
+              <!-- <td></td>-->
+              <td><%= form.text_field :packing_est_num_carton_six %></td>
+              <td><%= form.text_field :packing_per_unit_carton_six %></td>
+              <!-- <td></td>-->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_carton_six_n_half %></td>
+              <td><%= form.text_field :containers_est_num_carton_six_n_half %></td>
+              <td><%= form.text_field :containers_per_unit_carton_six_n_half %></td>
+              <!-- <td></td>-->
+              <td><%= form.text_field :packing_est_num_carton_six_n_half %></td>
+              <td><%= form.text_field :packing_per_unit_carton_six_n_half %></td>
+              <!-- <td></td>-->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_wardrobe_ctn %></td>
+              <td><%= form.text_field :containers_est_num_wardrobe_ctn %></td>
+              <td><%= form.text_field :containers_per_unit_wardrobe_ctn %></td>
+              <!-- <td></td>-->
+              <td><%= form.text_field :packing_est_num_wardrobe_ctn %></td>
+              <td><%= form.text_field :packing_per_unit_wardrobe_ctn %></td>
+              <!-- <td></td>-->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_mattress_twin %></td>
+              <td><%= form.text_field :containers_est_num_mattress_twin %></td>
+              <td><%= form.text_field :containers_per_unit_mattress_twin %></td>
+              <!-- <td></td>-->
+              <td><%= form.text_field :packing_est_num_mattress_twin %></td>
+              <td><%= form.text_field :packing_per_unit_mattress_twin %></td>
+              <!-- <td></td>-->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_mattress_full %></td>
+              <td><%= form.text_field :containers_est_num_mattress_full %></td>
+              <td><%= form.text_field :containers_per_unit_mattress_full %></td>
+              <!-- <td></td>-->
+              <td><%= form.text_field :packing_est_num_mattress_full %></td>
+              <td><%= form.text_field :packing_per_unit_mattress_full %></td>
+              <!-- <td></td>-->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_mattress_king_queen %></td>
+              <td><%= form.text_field :containers_est_num_mattress_king_queen %></td>
+              <td><%= form.text_field :containers_per_unit_mattress_king_queen %></td>
+              <!-- <td></td>-->
+              <td><%= form.text_field :packing_est_num_mattress_king_queen %></td>
+              <td><%= form.text_field :packing_per_unit_mattress_king_queen %></td>
+              <!-- <td></td>-->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_mattress_crib %></td>
+              <td><%= form.text_field :containers_est_num_mattress_crib %></td>
+              <td><%= form.text_field :containers_per_unit_mattress_crib %></td>
+              <!-- <td></td>-->
+              <td><%= form.text_field :packing_est_num_mattress_crib %></td>
+              <td><%= form.text_field :packing_per_unit_mattress_crib %></td>
+              <!-- <td></td>-->
+            </tr>
+            <tr>
+              <td><%= form.label :containers_est_num_mirror_ctn %></td>
+              <td><%= form.text_field :containers_est_num_mirror_ctn %></td>
+              <td><%= form.text_field :containers_per_unit_mirror_ctn %></td>
+              <!-- <td></td>-->
+              <td><%= form.text_field :packing_est_num_mirror_ctn %></td>
+              <td><%= form.text_field :packing_per_unit_mirror_ctn %></td>
+              <!-- <td></td>-->
+            </tr>
+            <tr>
+              <td>Crates Min. Size (Mirror)</td>
+              <td>X</td>
+              <td>X</td>
+              <td><%= form.text_field :packing_est_num_crates_min_size_mirror %></td>
+              <td><%= form.text_field :packing_per_unit_crates_min_size_mirror %></td>
+              <!--<td></td>
+              <td></td>-->
+            </tr>
+            <tr>
+              <td>Crates > Min. Size(Mirror)</td>
+              <td><%= form.text_field :crates_greater_size_mirror %></td>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <!--<td>X</td>
+              <td>X</td>-->
+            </tr>
+            <tr>
+              <td>Total Estimated Charges</td>
+              <td><%= form.text_field :total_estimated_charges %></td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+  </div>
+</div>
+
+<!-- End Form-->
+  <% if estimate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estimate.errors.count, "error") %> prohibited this estimate from being saved:</h2>
+
+      <ul>
+      <% estimate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>
