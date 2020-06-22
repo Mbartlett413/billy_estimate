@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
+gem 'pdfkit'
+gem 'render_anywhere'
+gem 'wkhtmltopdf-binary'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

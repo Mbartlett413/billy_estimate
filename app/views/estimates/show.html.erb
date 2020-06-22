@@ -1,4 +1,384 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container-fluid">
+	<!-- top -->
+	<div class="row col-12">
+		<div class="row col-4">
+			<div class="col-12"> <h6> <%= @estimate.user_id %> </h6></div>
+			<div class="col-12"> <h6> Name:<%= @estimate.name %> </h6></div>
+			<div class="col-12"> <h6> Origin Address:<%= @estimate.origin_address %> </h6></div>
+			<div class="col-12"> <h6> Destination Address: <%= @estimate.dest_addres %> </h6></div>
+			<div class="col-12"> <h6> Home Phone: <%= @estimate.home_phone %> </h6></div>
+			<div class="col-12"> <h6> Bus Phone: <%= @estimate.bus_phone %> </h6></div>
+			<div class="col-12"> <h6> Account #: <%= @estimate.account %> </h6></div>
+			<div class="col-12"> <h6> Pack Date: <%= @estimate.pack_date %> </h6></div>
+			<div class="col-12"> <h6> Load Date: <%= @estimate.load_date %> </h6></div>
+			<div class="col-12"> <h6> Delivery Date: <%= @estimate.delivery_date %> </h6></div>
+			<div class="col-12"> <h6> Special Instructions: <%= @estimate.special_instructions %> </h6></div>
+		</div>
+
+		<div class="row col-8">	
+		    <div class="row table-responsive-md">
+		      <table class="table table-striped">
+		        <thead>
+		          <tr>
+		              <th scope="col-8"> </th>
+
+		              <th scope="col-2" class="text-right">Service Facilities</th>
+		          </tr>
+		          <tr>
+		            <th scope="col"> Customer Will Move</th>
+		            <th scope="col"> Origin</th>
+		            <th scope="col"> Destination</th>
+		          </tr>
+		        </thead>
+				<tbody>
+					<tr scope="row">
+					    <td>
+					      <ul>
+					        <li>
+								<p>Small Lamps: <%= @estimate.small_lamps %></p>
+					        </li>
+					        <li>
+								<p>Dishes: <%= @estimate.dishes %></p> 
+					        </li>
+					      </ul>
+					    </td>
+					    <td>
+							<p><%= @estimate.origin_elevator %></p>
+					    </td>
+					    <td>
+							<p><%= @estimate.destination_elevator %></p>
+					    </td>
+					</tr>
+
+					<tr scope="row">
+					    <td>
+					      <ul>
+					        <li>
+								<p>Clothes: <%= @estimate.clothes %></p>
+					        </li>
+					        <li>
+								<p>All Breakables: <%= @estimate.all_breakables %></p>
+					        </li>
+					      </ul>
+					    </td>
+
+					    <td>
+					      <p><%= @estimate.origin_carry_flights %></p>
+					    </td>
+					    <td>
+							<p><%= @estimate.destination_carry_flights %></p>
+					    </td>
+					</tr>
+
+					</tr scope="row">
+						<td>
+							<ul>
+								<li>
+								    <p>Mirrors: <%= @estimate.mirrors %></p>
+								</li>
+								<li>
+								    <p>Pictures: <%= @estimate.pictures %></p>           
+								</li>
+							</ul>
+						</td>
+						<td>
+						  <p><%= @estimate.origin_lower_hoist %></p>
+						</td>
+						<td>
+						  <p><%= @estimate.destination_lower_hoist %></p>
+						</td>
+					</tr>
+
+					<tr scope="row">
+						<td>
+							<p>Everything, but furniture: <%= @estimate.everything_but_furniture %></p>   
+						</td>
+						<td>
+						 <p><%= @estimate.origin_long_carry %> </p>
+						</td>
+						<td>
+						  <p><%= @estimate.destination_long_carry %></p>
+						</td>
+					</tr>
+				</tbody>
+		      </table>
+			</div>
+		</div>
+	</div>
+
+	<!-- bottom -->
+	<div class="row col-12">
+		<div class="row col-4">
+			<div class="row">
+		      <h4>Estimated Cost Of Services</h4><br>
+		      <div class="form-group col-12">
+		        <p>
+		          Based On
+		          <%= @estimate.pounds %> Lbs 
+		          <%= @estimate.rooms %> Rooms 
+		          <%= @estimate.cubic_feet %> Cubic Feet 
+		        </p>  
+		      </div>
+		  	</div>
+		    <!-- A-->
+		    <div class="row">
+		      <h4>A. Local Moving </h4>
+
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p>
+		          Van and <%= @estimate.local_moving_movers %>movers at <%= @estimate.local_moving_per_hour %>per hour 
+		        </p>
+		      </div>
+
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p>
+		          Estimated at <%= @estimate.local_moving_estimated_hours %> hours
+		        </p>
+		      </div>
+
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p> 
+		          Driving Time <%= @estimate.local_moving_driving_time %> hours
+		        </p>
+		      </div>
+
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p>
+		          Insurance Charge $<%= @estimate.local_moving_insurance_charge %> at $<%= @estimate.local_moving_per_thousand %> per $1,000.00 declared value.
+		        </p>    
+		      </div>
+		    </div>
+		    <!-- B -->
+		    <div class="row">
+		      <h4>B. Storage </h4>
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p> Van and <%= @estimate.storage_movers %> movers at <%= @estimate.storage_per_hour %> per hour</p>
+		      </div>
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p>Estimated at <%= @estimate.storage_estimated_hours %> hours</p>
+		      </div>
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p>Warehouse handling in <%= @estimate.storage_handling_per_crate %> per crate</p>
+		      </div>
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p>Monthly Storage Charge <%= @estimate.storage_monthly_per_crate %> per crate</p>
+		      </div>
+		      <div class="col-lg-12 col-md-12 col-sm-12">
+		        <p>Insurance Charge $<%= @estimate.storage_insurance_charge %> at $<%= @estimate.storage_per_hundred_per_month %> per $100.00 declared value per month</p>
+		      </div>
+		    </div>
+		    <!-- C -->
+		    <div class="row">
+		      <h4> C. Packing Services </h4>
+		        <div class="col-lg-12 col-md-12 col-sm-12">
+		        	<h6>Container Charges: <%= @estimate.container_charges %></h6>
+		        </div>
+		        <div class="col-lg-12 col-md-12 col-sm-12">
+		        	<h6>Packing Labor: <%= @estimate.packing_labor %></h6>
+		        </div>
+		        <div class="col-lg-12 col-md-12 col-sm-12">
+		        	<h6>Unpacking Labor: <%= @estimate.unpacking_labor %></h6>
+					<p></p>
+		        </div>
+		        <div class="col-lg-12 col-md-12 col-sm-12">
+		        	<h6>Other Service: <%= @estimate.other_service_desc %> @ <%= @estimate.other_service_cost %></h6>
+		        </div>
+		        <div class="col-lg-12 col-md-12 col-sm-12">
+					<h6>Total Estimated Charge: <%= @estimate.estimate_total %></h6>
+					<h6> Down payment required: <%= @estimate.down_payment %></h6>
+		        </div>
+		    </div>
+		</div><!-- End -->
+
+		<div class="row col-6">
+	        <table class="table table-striped">
+				<thead>
+					<tr>
+					    <th scope="col-8">
+					    	<h6>C. Estimated Containers (Packing/Unpacking)</h6> 
+					    </th>
+					    <th scope="col-4"></th>
+					</tr>
+
+					<tr>
+					  <th scope="col-2"></th>
+					  <th scope="col-3"> Containers</th>
+					  <th></th>
+					  <!-- <th></th> Comment Out Total -->
+					  <th scope="col-3"> Packing</th>
+					</tr>
+
+					<tr>
+					  <th scope="col-2">Description</th>
+					  <th>Est Number</th>
+					  <th>Per Unit</th>
+					  <!-- <th>Total</th> -->
+					  <th>Est Number</th>
+					  <th>Per Unit</th>
+					  <!-- <th> Total</th> -->
+					</tr>
+				</thead>
+
+				<tbody>
+				           <tr>
+				              <td>containers_est_num_barrel_dish_packs</td>
+				              <td><%= @estimate.containers_est_num_barrel_dish_packs %></td>
+				              <td><%= @estimate.containers_per_unit_barrel_dish_packs %></td>
+				              <!--<td></td>-->
+				              <td><%= @estimate.packing_est_num_barrel_dish_packs %></td>
+				              <td><%= @estimate.packing_per_unit_barrel_dish_packs%></td>
+				              <!--<td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td>containers_est_num_carton_one_n_half </td>
+				              <td><%= @estimate.containers_est_num_carton_one_n_half %></td>
+				              <td><%= @estimate.containers_per_unit_carton_one_n_half %></td>
+				              <!-- <td></td> -->
+				              <td><%= @estimate.packing_est_num_carton_one_n_half %></td>
+				              <td><%= @estimate.packing_per_unit_carton_one_n_half %></td>
+				              <!-- <td></td> -->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_carton_three</td>
+				              <td><%= @estimate.containers_est_num_carton_three %></td>
+				              <td><%= @estimate.containers_per_unit_carton_three %></td>
+				              <!-- <td></td> -->
+				              <td><%= @estimate.packing_est_num_carton_three %></td>
+				              <td><%= @estimate.packing_per_unit_carton_three %></td>
+				              <!-- <td></td> -->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_carton_four_n_half</td>
+				              <td><%= @estimate.containers_est_num_carton_four_n_half %></td>
+				              <td><%= @estimate.containers_per_unit_carton_four_n_half %></td>
+				              <!-- <td></td> -->
+				              <td><%= @estimate.packing_est_num_carton_four_n_half %></td>
+				              <td><%= @estimate.packing_per_unit_carton_four_n_half %></td>
+				              <!-- <td></td> -->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_carton_six</td>
+				              <td><%= @estimate.containers_est_num_carton_six %></td>
+				              <td><%= @estimate.containers_per_unit_carton_six %></td>
+				              <!-- <td></td>-->
+				              <td><%= @estimate.packing_est_num_carton_six %></td>
+				              <td><%= @estimate.packing_per_unit_carton_six %></td>
+				              <!-- <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_carton_six_n_half </td>
+				              <td><%= @estimate.containers_est_num_carton_six_n_half %></td>
+				              <td><%= @estimate.containers_per_unit_carton_six_n_half %></td>
+				              <!-- <td></td>-->
+				              <td><%= @estimate.packing_est_num_carton_six_n_half %></td>
+				              <td><%= @estimate.packing_per_unit_carton_six_n_half %></td>
+				              <!-- <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_wardrobe_ctn </td>
+				              <td><%= @estimate.containers_est_num_wardrobe_ctn %></td>
+				              <td><%= @estimate.containers_per_unit_wardrobe_ctn %></td>
+				              <!-- <td></td>-->
+				              <td><%= @estimate.packing_est_num_wardrobe_ctn %></td>
+				              <td><%= @estimate.packing_per_unit_wardrobe_ctn %></td>
+				              <!-- <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_mattress_twin </td>
+				              <td><%= @estimate.containers_est_num_mattress_twin %></td>
+				              <td><%= @estimate.containers_per_unit_mattress_twin %></td>
+				              <!-- <td></td>-->
+				              <td><%= @estimate.packing_est_num_mattress_twin %></td>
+				              <td><%= @estimate.packing_per_unit_mattress_twin %></td>
+				              <!-- <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_mattress_full </td>
+				              <td><%= @estimate.containers_est_num_mattress_full %></td>
+				              <td><%= @estimate.containers_per_unit_mattress_full %></td>
+				              <!-- <td></td>-->
+				              <td><%= @estimate.packing_est_num_mattress_full %></td>
+				              <td><%= @estimate.packing_per_unit_mattress_full %></td>
+				              <!-- <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_mattress_king_queen </td>
+				              <td><%= @estimate.containers_est_num_mattress_king_queen %></td>
+				              <td><%= @estimate.containers_per_unit_mattress_king_queen %></td>
+				              <!-- <td></td>-->
+				              <td><%= @estimate.packing_est_num_mattress_king_queen %></td>
+				              <td><%= @estimate.packing_per_unit_mattress_king_queen %></td>
+				              <!-- <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_mattress_crib </td>
+				              <td><%= @estimate.containers_est_num_mattress_crib %></td>
+				              <td><%= @estimate.containers_per_unit_mattress_crib %></td>
+				              <!-- <td></td>-->
+				              <td><%= @estimate.packing_est_num_mattress_crib %></td>
+				              <td><%= @estimate.packing_per_unit_mattress_crib %></td>
+				              <!-- <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td> containers_est_num_mirror_ctn </td>
+				              <td><%= @estimate.containers_est_num_mirror_ctn %></td>
+				              <td><%= @estimate.containers_per_unit_mirror_ctn %></td>
+				              <!-- <td></td>-->
+				              <td><%= @estimate.packing_est_num_mirror_ctn %></td>
+				              <td><%= @estimate.packing_per_unit_mirror_ctn %></td>
+				              <!-- <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td>Crates Min. Size (Mirror)</td>
+				              <td>X</td>
+				              <td>X</td>
+				              <td><%= @estimate.packing_est_num_crates_min_size_mirror %></td>
+				              <td><%= @estimate.packing_per_unit_crates_min_size_mirror %></td>
+				              <!--<td></td>
+				              <td></td>-->
+				            </tr>
+
+				            <tr>
+				              <td>Crates > Min. Size(Mirror)</td>
+				              <td><%= @estimate.crates_greater_size_mirror %></td>
+				              <td>X</td>
+				              <td>X</td>
+				              <td>X</td>
+				              <!--<td>X</td>
+				              <td>X</td>-->
+				            </tr>
+
+				            <tr>
+				              <td>Total Estimated Charges</td>
+				              <td><%= @estimate.total_estimated_charges %></td>
+				            </tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
 <%= link_to 'Edit', edit_estimate_path(@estimate) %> |
 <%= link_to 'Back', estimates_path %>
+<%= link_to "Download PDF",
+  estimate_download_path(@estimate, format: "pdf"),
+  target: "_blank",
+  class: "download" %>
+

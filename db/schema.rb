@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_20_190642) do
+ActiveRecord::Schema.define(version: 2020_06_21_060649) do
 
   create_table "estimates", force: :cascade do |t|
     t.integer "user_id"
@@ -114,6 +114,11 @@ ActiveRecord::Schema.define(version: 2020_06_20_190642) do
     t.decimal "packing_per_unit_crates_min_size_mirror", precision: 8, scale: 2
     t.string "crates_greater_size_mirror"
     t.decimal "total_estimated_charges", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "invoice_pdfs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

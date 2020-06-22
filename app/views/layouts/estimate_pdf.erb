@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Envato Invoices</title>
+  <style>
+    <%= Rails.application.assets.find_asset('application.scss').to_s %>
+  </style>
+</head>
+<body>
+	<div style="text-align: center; margin-top: 0px;">
+<h6>Estimate/Order For Service</h6>
+<h6>Rainbow Moving & Storage</h6>
+<h6>12105 Action Lane, Unit 1B</h6>
+<h6>Walorf, MD 20601</h6>
+<h6>(301)843-3541 1800-942-8548</h6>
+	</div>
+
+  <%= yield %>
+</body>
+</html>

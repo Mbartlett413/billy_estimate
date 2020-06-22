@@ -1,0 +1,374 @@
+<div class="invoice">
+	<div class="firstSection">
+		<div class="fiftyL">
+			<h6> Name:<%= estimate.name %> </h6>
+			<h6> Origin Address:<%= estimate.origin_address %> </h6>
+			<h6> Destination Address: <%= estimate.dest_addres %> </h6>
+
+			<h6 class="pull_right"> Bus Phone: <%= estimate.bus_phone %> </h6>
+			<h6> Home Phone: <%= estimate.home_phone %> </h6>
+			<h6> Special Instructions: PLEASE HAVE CUSTOMER READ AND SIGN TERMS AND CONDITIONS PRIOT TO DOING ANY WORK: UPON COMPLETION OF THE JOB HAVE THEM SIGN AT THE BOTTOM. THANK YOU!!!! FOUR (4) HOUR MINIMUM APPLIES!!!!!!!!!!!!!!!!<%= estimate.special_instructions %> </h6>
+		</div>
+		<div class="fiftyR">
+			
+			<h6> Account #: <%= estimate.account %> </h6>
+			<h6> Pack Date: <%= estimate.pack_date %> </h6>
+			<h6> Load Date: <%= estimate.load_date %> </h6>
+			<h6> Delivery Date: <%= estimate.delivery_date %> </h6>	
+		</div>
+		<div class="thirty">
+		      <table  border ="1" class="table-striped">
+			        <thead>
+			        	<tr>
+			        		<th rowspan="2" colspan="2" style="text-align: center;">Customer Will Move</th>
+			        		<th colspan="3" style="text-align: center;">Service Facilities</th>
+			        	</tr>
+			          <tr>
+			            <th colspan="3"> 
+								Origin
+			            	<p class="pull_right">Dest</p>
+			            </th>
+			          </tr>
+			        </thead>
+					<tbody>
+						<tr>
+						    <td>Small Lamps: <%= estimate.small_lamps %></td>
+						    <td>Dishes: <%= estimate.dishes %></td>
+						    <td>
+								<%= estimate.origin_elevator %> 
+						    </td>
+						    <td>Elevator</td>
+						    <td>
+								<%= estimate.destination_elevator %>
+						    </td>
+						</tr>
+
+						<tr >
+							<td>Clothes: <%= estimate.clothes %></td>
+							<td>All Breakables: <%= estimate.all_breakables %></td>
+						    <td>
+						      <%= estimate.origin_carry_flights %>
+						    </td>
+						    <td>CarryFlights</td>
+						    <td>
+								<p><%= estimate.destination_carry_flights %></p>
+						    </td>
+						</tr>
+
+						</tr >
+							<td>Mirrors: <%= estimate.mirrors %></td>
+							<td>Pictures: <%= estimate.pictures %></td>
+							<td>
+							  <p><%= estimate.origin_lower_hoist %> </p>
+							</td>
+							<td>Lower/Hoist</td>
+							<td>
+							  <p><%= estimate.destination_lower_hoist %></p>
+							</td>
+						</tr>
+
+						<tr >
+							<td colspan="2">
+								<p>Everything but furniture: <%= estimate.everything_but_furniture %></p>   
+							</td>
+
+							<td>
+							 <p><%= estimate.origin_long_carry %>  </p>
+							</td>
+							<td>Long Carry</td>
+							<td>
+							  <p><%= estimate.destination_long_carry %></p>
+							</td>
+						</tr>
+					</tbody>
+		      </table>
+		</div>
+	</div>
+
+	<div class="sectionSection">
+		<div class="fourty">
+			<div>
+		      <h5 style="text-align: center;"><u>Estimated Cost Of Services</u></h5>
+		      <div >
+		        <p>
+		          Based On
+		          <u><%= estimate.pounds %></u> Lbs 
+		          <u><%= estimate.rooms %></u> Rooms 
+		          <u><%= estimate.cubic_feet %></u> Cubic Feet 
+		        </p>  
+		      </div>
+		  	</div>
+		    <!-- A-->
+		    <div >
+		      <h5><b><u>A. Local Moving </b></u></h5>
+		        <p>
+		          Van and <%= estimate.local_moving_movers %>movers at <%= estimate.local_moving_per_hour %>per hour 
+		        </p>
+		        
+		        <p class="pull_right">$_____</p>
+		        <p>
+		          Estimated at <%= estimate.local_moving_estimated_hours %> hours
+		        </p>
+		        
+		        <p class="pull_right">$_____</p>
+		        <p> 
+		          Driving Time <%= estimate.local_moving_driving_time %> hours
+		        </p>
+
+		        <p class="pull_right">$_____</p>
+		        <p>
+		          Insurance Charge $<%= estimate.local_moving_insurance_charge %> at $<%= estimate.local_moving_per_thousand %> per $1,000.00 declared value.
+		        </p>
+
+		    </div>
+		    <!-- B -->
+		    <div >
+		      <h5><b><u>B. Storage </u></b></h5>
+
+		        <p> Van and <%= estimate.storage_movers %> movers at <%= estimate.storage_per_hour %> per hour</p>
+
+		        <p class="pull_right">$_____</p>
+		        <p>Estimated at <%= estimate.storage_estimated_hours %> hours</p>
+
+		        <p class="pull_right">$_____</p>
+		        <p>Warehouse handling in <%= estimate.storage_handling_per_crate %> per crate</p>
+
+				<p class="pull_right">$_____</p>
+		        <p>Monthly Storage Charge <%= estimate.storage_monthly_per_crate %> per crate</p>
+
+		        <p class="pull_right">$_____</p>
+		        <p>Insurance Charge $<%= estimate.storage_insurance_charge %> at $<%= estimate.storage_per_hundred_per_month %> per $100.00 declared value per month</p>
+		    </div>
+		    <!-- C -->
+		    <div class="BorderBottom">
+		      <h5><b><u> C. Packing Services </u></b></h5>
+		      		<p class='pull_right'> $<%= estimate.container_charges %></p>
+		        	<p> Container Charges:</p> 
+
+		        	<p class='pull_right'> $<%= estimate.packing_labor %></p>
+		        	<p>Packing Labor: </p> 
+
+		        	<p class='pull_right'> $<%= estimate.unpacking_labor %></p>
+		        	<p>Unpacking Labor: </p> 
+
+		        	<p class='pull_right'> $<%= estimate.other_service_cost %> </p>
+		        	<p> Other Service:> <%= estimate.other_service_desc %> </p>	
+		    </div>
+		     <!-- Total -->
+		    <div class="BorderBottom">
+		        	<p class='pull_right'> $<%= estimate.estimate_total %></p>
+					<p>Total Estimated Charge: </p> 
+		    </div>
+		    <div>
+					<p class='pull_right'> $<%= estimate.down_payment %></p>
+					<p> AMOUNT REQUIRED IN CASH OR CERTIFIED FUNDS PRIOR TO COMMENCEMENT OF ANY SERVICE: </p> 
+		    </div>
+		</div>
+
+		<div class="sixty">
+			<h6 style="text-align: center;"><u>C. Estimated Containers(Packing/Unpacking) </u></h6>
+	        <table border ="1" class="table-striped">
+				<thead>
+					<tr>
+						<th rowspan="2" width="50" style="text-align: center;"> Description</th>
+						<th colspan="3" width="25" style="text-align: center;"> Containers</th>
+						<th colspan="3" width="25" style="text-align: center;">Packing</th>
+					</tr>
+
+					<tr>
+					  
+					  <th style="text-align: center;" > Est Number</th>
+					  <th style="text-align: center;" > Per Unit</th>
+					  <th style="text-align: center;" >TOTAL</th>
+					  <th style="text-align: center;" > Est Number</th>
+					  <th style="text-align: center;" > Per Unit</th>
+					  <th style="text-align: center;" >TOTAL</th>
+				
+					</tr>
+				</thead>
+
+				<tbody>
+				           <tr>
+				              <td>BARREL OR DISH PACKS</td>
+				              <td ><%= estimate.containers_est_num_barrel_dish_packs %></td>
+				              <td ><%= estimate.containers_per_unit_barrel_dish_packs %></td>
+				              <td ></td>
+				              <td ><%= estimate.packing_est_num_barrel_dish_packs %></td>
+				              <td ><%= estimate.packing_per_unit_barrel_dish_packs%></td>
+				              <td ></td>
+				            </tr>
+
+				            <tr>
+				              <td>CARTON 1-1/2 CU Ft </td>
+				              <td><%= estimate.containers_est_num_carton_one_n_half %></td>
+				              <td><%= estimate.containers_per_unit_carton_one_n_half %></td>
+				              <td></td> 
+				              <td><%= estimate.packing_est_num_carton_one_n_half %></td>
+				              <td><%= estimate.packing_per_unit_carton_one_n_half %></td>
+				              <td></td> 
+				            </tr>
+
+				            <tr>
+				              <td>CARTON 3 CU FT</td>
+				              <td><%= estimate.containers_est_num_carton_three %></td>
+				              <td><%= estimate.containers_per_unit_carton_three %></td>
+				              <td></td> 
+				              <td><%= estimate.packing_est_num_carton_three %></td>
+				              <td><%= estimate.packing_per_unit_carton_three %></td>
+				              <td></td> 
+				            </tr>
+
+				            <tr>
+				              <td> CARTON 4-1/2 CU FT</td>
+				              <td><%= estimate.containers_est_num_carton_four_n_half %></td>
+				              <td><%= estimate.containers_per_unit_carton_four_n_half %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_carton_four_n_half %></td>
+				              <td><%= estimate.packing_per_unit_carton_four_n_half %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>CARTON 6 CU FT</td>
+				              <td><%= estimate.containers_est_num_carton_six %></td>
+				              <td><%= estimate.containers_per_unit_carton_six %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_carton_six %></td>
+				              <td><%= estimate.packing_per_unit_carton_six %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>CARTON 6-1/2 CU FT</td>
+				              <td><%= estimate.containers_est_num_carton_six_n_half %></td>
+				              <td><%= estimate.containers_per_unit_carton_six_n_half %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_carton_six_n_half %></td>
+				              <td><%= estimate.packing_per_unit_carton_six_n_half %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>WARDROBE CTN</td>
+				              <td><%= estimate.containers_est_num_wardrobe_ctn %></td>
+				              <td><%= estimate.containers_per_unit_wardrobe_ctn %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_wardrobe_ctn %></td>
+				              <td><%= estimate.packing_per_unit_wardrobe_ctn %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>MATTRESS 39X75</td>
+				              <td><%= estimate.containers_est_num_mattress_twin %></td>
+				              <td><%= estimate.containers_per_unit_mattress_twin %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_mattress_twin %></td>
+				              <td><%= estimate.packing_per_unit_mattress_twin %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>MATTRESS 54X75</td>
+				              <td><%= estimate.containers_est_num_mattress_full %></td>
+				              <td><%= estimate.containers_per_unit_mattress_full %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_mattress_full %></td>
+				              <td><%= estimate.packing_per_unit_mattress_full %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>MATTRESS K/Q</td>
+				              <td><%= estimate.containers_est_num_mattress_king_queen %></td>
+				              <td><%= estimate.containers_per_unit_mattress_king_queen %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_mattress_king_queen %></td>
+				              <td><%= estimate.packing_per_unit_mattress_king_queen %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>MATTRESS CTN CRIB</td>
+				              <td><%= estimate.containers_est_num_mattress_crib %></td>
+				              <td><%= estimate.containers_per_unit_mattress_crib %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_mattress_crib %></td>
+				              <td><%= estimate.packing_per_unit_mattress_crib %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>MIRROR CTN</td>
+				              <td><%= estimate.containers_est_num_mirror_ctn %></td>
+				              <td><%= estimate.containers_per_unit_mirror_ctn %></td>
+				              <td></td>
+				              <td><%= estimate.packing_est_num_mirror_ctn %></td>
+				              <td><%= estimate.packing_per_unit_mirror_ctn %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>CRATES MIN SIZE</td>
+				              <td>X</td>
+				              <td>X</td>
+				              <td>X</td>
+				              <td><%= estimate.packing_est_num_crates_min_size_mirror %></td>
+				              <td><%= estimate.packing_per_unit_crates_min_size_mirror %></td>
+				              <td></td>
+				            </tr>
+
+				            <tr>
+				              <td>CRATES > MIN SIZE</td>
+				              <td colspan="6"><%= estimate.crates_greater_size_mirror %></td>
+
+				            </tr>
+
+				            <tr>
+				              <td colspan="4">Total Estimated Charges</td>
+				              <td></td>
+				              <td><%= estimate.total_estimated_charges %></td>
+				              <td></td>
+				            </tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="terms">
+		<h6>TERMS & CONDITIONS OF AGREEMENT</h6>
+		<div class="fiftyL">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis tellus vitae elit consequat iaculis. Mauris eget interdum nunc, a facilisis quam. Ut et ligula ipsum. Integer sed aliquet mi, et placerat tellus.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis tellus vitae elit consequat iaculis. Mauris eget interdum nunc, a facilisis quam. Ut et ligula ipsum. Integer sed aliquet mi, et placerat tellus.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis tellus vitae elit consequat iaculis. Mauris eget interdum nunc, a facilisis quam. Ut et ligula ipsum. Integer sed aliquet mi, et placerat tellus.</p>
+
+		</div>
+
+		<div class="fiftyR">
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis tellus vitae elit consequat iaculis. Mauris eget interdum nunc, a facilisis quam. Ut et ligula ipsum. Integer sed aliquet mi, et placerat tellus.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis tellus vitae elit consequat iaculis. Mauris eget interdum nunc, a facilisis quam. Ut et ligula ipsum. Integer sed aliquet mi, et placerat tellus.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis tellus vitae elit consequat iaculis. Mauris eget interdum nunc, a facilisis quam. Ut et ligula ipsum. Integer sed aliquet mi, et placerat tellus.</p>
+
+		</div>
+	</div>
+
+	<div class="signatureSection">
+
+		<div class="fiftyL">
+			<ul>
+				<li>Customer Signature</li>
+				<li>Customer Signature</li>
+				<li>Recieved Payment</li>
+			</ul>
+		</div>
+
+		<div class="fiftyR">
+			<ul>
+				<li>Estimator's Signature</li>
+				<li>Drivers Signature</li>
+
+			</ul>
+		</div>
+	</div>
+</div>

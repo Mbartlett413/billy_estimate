@@ -16,11 +16,134 @@
 
  @import "bootstrap";
 
+body {
+	color: blue;
+}
+
+h5 {
+	color: black;
+}
+
+h3{
+	color: black;
+}
 
 ul {
 	list-style: none;
+	padding: 0px; 
+	margin: 0px;
+}
+tr{
+	line-height: 14px;
+	vertical-align: middle;
+}
+.firstSection{
+	height: 300px;
+	border-bottom: 3px black solid;
+	padding: 0px; 
+	margin: 0px;
+}
+.seventy{
+	width: 50%;
+	display: inline;
+	float: left;
+}
+.thirty{
+	width: 50%;
+	display: inline;
+	float: right;
 }
 
-li{
-	list-style: none;
+.thirty td{
+	line-height: 10px;
+	text-align: center;
+	vertical-align: middle;
 }
+
+
+.thirty p {
+		line-height: 10px;
+
+}
+
+
+.sectionSection{
+	height: 550px; 
+	border-bottom: 3px black solid;
+	padding: 0px; 
+	margin: 0px;
+}
+
+.fourty{
+	width: 39%;
+	display: inline;
+	float: left;
+}
+.fourty p {
+	padding-top: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.pull_right{
+	float: right;
+}
+
+.BorderBottom{
+	border-bottom: 2px solid black;
+}
+
+
+.sixty{
+	width: 60%;
+	display: inline;
+	float: right;
+}
+.sixty td{
+	line-height: 12px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.terms{
+	height: 150px;
+	border-bottom: 3px black solid;
+	padding: 0px; 
+	margin: 0px;
+}
+.fiftyL{
+	width: 49%;
+	display: inline;
+	float: left;
+}
+.fiftyR{
+	width: 50%;
+	display: inline;
+	float: right;
+}
+.fiftyL p{
+	line-height: 8px;
+	font-size: 8px;
+	padding-top: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+.fiftyR p{
+	line-height: 8px;
+	font-size: 8px;
+	padding-top: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
